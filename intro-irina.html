@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pentru Irina ❤️</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    min-height: 100vh;
+    background: #0d0608;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .bg-heart {
+    position: absolute;
+    opacity: 0;
+    animation: driftHeart linear infinite;
+  }
+
+  @keyframes driftHeart {
+    0%   { opacity: 0; transform: translateY(0) translateX(0) scale(0.9); }
+    10%  { opacity: 0.08; }
+    90%  { opacity: 0.06; }
+    100% { opacity: 0; transform: translateY(-100vh) translateX(20px) scale(1.1); }
+  }
+</style>
+</head>
+<body>
+
+<script>
+  const bgChars = ['❤️', '💕', '💗', '🌹', '💖'];
+  for (let i = 0; i < 40; i++) {
+    const h = document.createElement('div');
+    h.className = 'bg-heart';
+    h.textContent = bgChars[Math.floor(Math.random() * bgChars.length)];
+    h.style.left = Math.random() * 100 + 'vw';
+    h.style.top = (60 + Math.random() * 60) + 'vh';
+    h.style.fontSize = (1.2 + Math.random() * 2) + 'rem';
+    h.style.animationDelay = (Math.random() * 12) + 's';
+    h.style.animationDuration = (8 + Math.random() * 10) + 's';
+    document.body.appendChild(h);
+  }
+</script>
+
+</body>
+</html>
